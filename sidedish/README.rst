@@ -1,5 +1,5 @@
 ==========================
-Django Blocks
+Django SideDish
 ==========================
 
 Installation
@@ -16,18 +16,18 @@ Template Tags
 
 The following template tag libraries are available:
 
-- `blocks`: tags for dealing with blocks in general
+- `sidedish`: tags for dealing with dishes in general
 
-	blocks_area
+	side
 	-----------
 
-	Renders a block area
+	Renders a side
 
-		{% blocks_area 'area_name' %}
+		{% dish 'side_name' %}
 
-	blocks_block
+	dish
 	-----------
 
-	Renders a block
+	Renders a dish
 
-		{% blocks_block 'block_slug' %}
+		{% dish 'dish_slug' %}
