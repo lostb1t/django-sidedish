@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-30 15:41+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: models.py:8 models.py:25
+msgid "Title"
+msgstr "Title"
+
+#: models.py:9
+msgid "URL or URL RegEx"
+msgstr "URL oder regulärer Ausdruck für URL"
+
+#: models.py:10
+msgid "RegEx"
+msgstr "Regulärer Ausdruck"
+
+#: models.py:12 models.py:44
+msgid "Created At"
+msgstr "Erstellt am"
+
+#: models.py:13 models.py:45
+msgid "Updated At"
+msgstr "Aktualisiert Am"
+
+#: models.py:20
+msgid "URL"
+msgstr "URL"
+
+#: models.py:21 models.py:39
+msgid "URLs"
+msgstr "URLs"
+
+#: models.py:26
+msgid "Content"
+msgstr "Inhalt"
+
+#: models.py:27
+msgid "Slug"
+msgstr "Webserverebene"
+
+#: models.py:27
+msgid ""
+"A slug is the part of a URL which identifies a page using human-readable "
+"keywords"
+msgstr ""
+"Webserverebene — ist eine art bezeichnung für den URL. Enthält in der Regel "
+"nur Latin Kleinbuchstaben, Zahlen und Bindestriche."
+
+#: models.py:30
+msgid "header"
+msgstr "Überschrift"
+
+#: models.py:31
+msgid "aside"
+msgstr "rechtes Sitebar"
+
+#: models.py:32
+msgid "footer"
+msgstr "fußnote"
+
+#: models.py:34
+msgid "Area"
+msgstr "Area"
+
+#: models.py:36
+msgid "Show title"
+msgstr "Title zeigen"
+
+#: models.py:38
+msgid "Sites"
+msgstr "Seiten"
+
+#: models.py:41
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: models.py:43
+msgid "Public"
+msgstr "Veröffentlichen"
+
+#: models.py:52
+msgid "Dish"
+msgstr "Dish"
+
+#: models.py:53
+msgid "Dishs"
+msgstr "Blöcke"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Text"
+#~ msgstr "Text"
