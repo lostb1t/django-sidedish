@@ -18,16 +18,16 @@ The following template tag libraries are available:
 
 - `sidedish`: tags for dealing with dishes in general
 
-	side
-	-----------
+    side
+    -----------
 
-	Renders a side
+    Renders a side
 
-		{% dish 'side_name' %}
+        {% dish 'side_name' %}
 
-	dish
-	-----------
+    dish
+    -----------
 
-	Renders a dish
+    Renders a dish
 
-		{% dish 'dish_slug' %}
+        {% dish 'dish_slug' %}
