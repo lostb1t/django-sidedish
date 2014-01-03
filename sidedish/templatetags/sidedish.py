@@ -26,23 +26,24 @@ def sidedishes(context, side):
         "sidedish/side.html",
     ]
 
-    tpl = template.loader.get_template('sidedish/side.html')
+    tpl = template.loader.select_template(template_list)
     return tpl.render(template.Context(context))
 
 
 @register.simple_tag(takes_context=True)
-def sidedish(context, slug):
+def sidedish(context, dish):
     request = context['request']
 
     try:
-        dish = Dish.objects.published().get(slug=slug)
+        if not isinstance(dish, Dish):
+            dish = Dish.objects.published().get(slug=dish)
 
-        if match_path(request.path, dish.pages):
-            context['dish'] = dish
+        if (dish.pages == "" or not dish.pages) or match_path(request.path, dish.pages):
+            context['sidedish'] = dish
 
         template_list = [
             "sidedish/%s.html" % dish.slug,
-            "sidedish/dish.html",
+            "sidedish/sidedish.html",
         ]
     except:
         return None

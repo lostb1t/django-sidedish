@@ -1,3 +1,5 @@
-{% for sidedish in sidedishes %}
-    {% include "sidedish/sidedish.html" %}
+{% load sidedish %}
+
+{% for dish in sidedishes %}
+	{% sidedish dish %}
 {% endfor %}

@@ -60,6 +60,6 @@ The following template tag libraries are available:
 
     #### sidedish
 
-    Renders a dish
+    Renders a individual dish
 
         {% sidedish 'dish_slug' %}
