@@ -5,8 +5,8 @@ import sidedish
 setup(
     name='django-sidedish',
     version='0.1',
-    description="A Django app for managing re-usable 'dishes' of content.",
-    long_description=open('README.rst').read(),
+    description="A Django app for managing content boxes(dishes)",
+    long_description=open('README.md').read(),
     author='Sjoerd Arendsen',
     author_email='sjoerd@optixdesigns.com',
     url='https://github.com/docc/django-sidedish',
