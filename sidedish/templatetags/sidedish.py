@@ -30,7 +30,7 @@ def sidedish_side(context, side):
 
 
 @register.simple_tag(takes_context=True)
-def sidedish_dish(context, slug):
+def sidedish(context, slug):
     request = context['request']
 
     try:

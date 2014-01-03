@@ -1,0 +1,8 @@
+{% if sidedish %}
+	<div>
+		{% if sidedish.show_title %}
+			<h5>{{sidedish.title}}</h5>
+		{% endif %}
+		{{sidedish.content|safe}}
+	</div>
+{% endif %}
