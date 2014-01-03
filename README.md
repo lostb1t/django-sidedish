@@ -3,7 +3,7 @@ Django SideDish
 
 Dishes are content boxes visible in various "side's" of your website
 
-Whether, and where, a given dish will appear on a page depends on both the theme enabled and on administrative block settings. Dish settings are controlled from the SideDish administration. It is possible to control whether each dish is enabled where it will be placed on the page, and control the visibility of blocks on each page.
+Whether, and where, a given dish will appear on a page depends on both the theme enabled and administrative dish settings. Dish settings are controlled from the SideDish administration. It is possible to control whether each dish is enabled where it will be placed on the page, and control the visibility of dish on each page.
 
 
 Features
