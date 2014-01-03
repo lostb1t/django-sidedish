@@ -6,10 +6,12 @@ from .models import Dish
 
 
 class DishForm(forms.ModelForm):
-    test = forms.CharField()
-
     class Meta:
         model = Dish
+        widgets = {
+            'visibility': forms.RadioSelect(),
+        } 
+
 
 class DishAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
@@ -17,14 +19,14 @@ class DishAdmin(admin.ModelAdmin):
     search_fields = ['title', 'side', 'weight']
     list_filter = ['side',]
     list_editable = ['weight', 'side',]
-    #form = DishForm
+    form = DishForm
     fieldsets = (
         (None, {
             'fields': (('title', 'show_title'), 'slug', 'weight', 'content',)
         }),
         ('Publication', {
             'classes': ('collapse',),
-            'fields': ('publish_date', 'expiry_date', 'status', 'side', 'pages',)
+            'fields': ('publish_date', 'expiry_date', 'status', 'side', 'visibility', 'pages',)
         }),
     )
 

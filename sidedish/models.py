@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from . import settings
 from .managers import PublishedManager
+from .utils import match_path
 
 from datetime import datetime
 
@@ -25,6 +26,7 @@ class Dish(models.Model):
     expiry_date = models.DateTimeField(_("Expires on"), help_text=_("With published checked, won't be shown after this time"), blank=True, null=True)
     content = TextField(verbose_name=_('Content'), blank=True, null=True)
     side = models.CharField(verbose_name=_('Side'), max_length=20, blank=True, choices=settings.SIDEDISH_SIDES)
+    visibility = models.IntegerField(_("Visibility"), default=0, choices=((0, _('Show on every page except the listed pages')), (1, _('Show on only the listed pages'))))
     pages = models.TextField(_('Pages'), blank=True, help_text=_('Enter one page per line as paths. The \'*\' character is a wildcard. Example paths: \'article\' for the article page. \'article/*\' for every article page. Use \'<front>\' for the frontpage.'))
     weight = models.PositiveSmallIntegerField(verbose_name=_('Weight'), help_text=_('Weight for dish ordering'), default=500)
 
@@ -37,4 +39,20 @@ class Dish(models.Model):
         ordering = ['weight', '-created_at']
         verbose_name = _('Dish')
         verbose_name_plural = _('Dishes')
+
+    def is_visible(self, path):
+        # should we take into acccount the published state?
+        
+        # exclude from pages
+        if self.visibility == 0: 
+            if (self.pages == "" or not self.pages) or not match_path(path, self.pages):
+                return True
+
+        # show on liste pages
+        elif self.visibility == 1:
+            if match_path(path, self.pages):
+                return True
+
+        return False
+
 

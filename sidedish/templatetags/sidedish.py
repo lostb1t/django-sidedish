@@ -15,7 +15,7 @@ def sidedishes(context, side):
     dishes = []
 
     for dish in Dish.objects.published().filter(side=side):
-        if (dish.pages == "" or not dish.pages) or match_path(request.path, dish.pages):
+        if dish.is_visible(request.path):
             dishes.append(dish)
 
     context['sidedishes'] = dishes
@@ -38,7 +38,7 @@ def sidedish(context, dish):
         if not isinstance(dish, Dish):
             dish = Dish.objects.published().get(slug=dish)
 
-        if (dish.pages == "" or not dish.pages) or match_path(request.path, dish.pages):
+        if dish.is_visible(request.path):
             context['sidedish'] = dish
 
         template_list = [
