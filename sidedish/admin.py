@@ -15,16 +15,16 @@ class DishAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     list_display = ['title', 'side', 'weight']
     search_fields = ['title', 'side', 'weight']
-    list_filter = ['side', 'sites']
+    list_filter = ['side',]
     list_editable = ['weight', 'side',]
     #form = DishForm
     fieldsets = (
         (None, {
-            'fields': (('title', 'show_title'), 'slug', 'weight', 'content', 'url', 'image' )
+            'fields': (('title', 'show_title'), 'slug', 'weight', 'content',)
         }),
         ('Publication', {
             'classes': ('collapse',),
-            'fields': ('publish_date', 'expiry_date', 'status', 'side', 'pages', 'sites')
+            'fields': ('publish_date', 'expiry_date', 'status', 'side', 'pages',)
         }),
     )
 
