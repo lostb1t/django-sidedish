@@ -9,21 +9,22 @@ register = template.Library()
 
 
 @register.simple_tag(takes_context=True)
-def sidedish_side(context, side):
+def sidedishes(context, side):
     request = context['request']
 
-    pks = []
-    dishes = None
+    dishes = []
 
     for dish in Dish.objects.published().filter(side=side):
-        if match_path(request.path, dish.pages):
-            pks += [dish.pk]
+        if (dish.pages == "" or not dish.pages) or match_path(request.path, dish.pages):
+            dishes.append(dish)
 
-    if len(pks) != 0:
-        dish = Dish.objects.published().filter(pk__in=pks)
-
-    context['dishes'] = dishes
+    context['sidedishes'] = dishes
     context['side'] = side
+
+    template_list = [
+        "sidedish/%s.html" % side,
+        "sidedish/side.html",
+    ]
 
     tpl = template.loader.get_template('sidedish/side.html')
     return tpl.render(template.Context(context))
@@ -38,8 +39,13 @@ def sidedish(context, slug):
 
         if match_path(request.path, dish.pages):
             context['dish'] = dish
-    except:
-        context['dish'] = None
 
-    tpl = template.loader.get_template('sidedish/dish.html')
+        template_list = [
+            "sidedish/%s.html" % dish.slug,
+            "sidedish/dish.html",
+        ]
+    except:
+        return None
+
+    tpl = template.loader.select_template(template_list)
     return tpl.render(template.Context(context))

@@ -9,10 +9,11 @@ Whether, and where, a given dish will appear on a page depends on both the theme
 Features
 ----------
 
-- Add dishes through admin.
+- Control visibilty of dishes on each page from admin
 - CKeditor support for body field
 - Schedule options for publishing
-- Template tags to render individual dishes or side's with dishes
+- Template tags to render individual dishes or side's
+- Templates for dishes and side's
 
 
 Installation
