@@ -62,7 +62,7 @@ The following template tag libraries are available:
 
     Renders a individual dish
 
-        {% sidedish ['dish_slug'|dish_object] %}
+        {% sidedish 'dish_slug'|dish_object %}
 
 
 #### Template files
