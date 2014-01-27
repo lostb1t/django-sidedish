@@ -22,7 +22,7 @@ class Migration(SchemaMigration):
     models = {
         u'sidedish.dish': {
             'Meta': {'ordering': "['weight', '-created_at']", 'object_name': 'Dish'},
-            'content': ('ckeditor.fields.RichTextField', [], {'null': 'True', 'blank': 'True'}),
+            'content': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'created_at': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'expiry_date': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
