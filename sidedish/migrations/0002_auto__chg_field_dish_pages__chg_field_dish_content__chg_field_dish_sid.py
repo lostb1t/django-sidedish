@@ -12,9 +12,6 @@ class Migration(SchemaMigration):
         # Changing field 'Dish.pages'
         db.alter_column(u'sidedish_dish', 'pages', self.gf('django.db.models.fields.TextField')(default=''))
 
-        # Changing field 'Dish.content'
-        db.alter_column(u'sidedish_dish', 'content', self.gf('ckeditor.fields.RichTextField')(null=True))
-
         # Changing field 'Dish.side'
         db.alter_column(u'sidedish_dish', 'side', self.gf('django.db.models.fields.CharField')(default='', max_length=20))
 
@@ -23,16 +20,13 @@ class Migration(SchemaMigration):
         # Changing field 'Dish.pages'
         db.alter_column(u'sidedish_dish', 'pages', self.gf('django.db.models.fields.TextField')(null=True))
 
-        # Changing field 'Dish.content'
-        db.alter_column(u'sidedish_dish', 'content', self.gf('django.db.models.fields.TextField')(null=True))
-
         # Changing field 'Dish.side'
         db.alter_column(u'sidedish_dish', 'side', self.gf('django.db.models.fields.CharField')(max_length=20, null=True))
 
     models = {
         u'sidedish.dish': {
             'Meta': {'ordering': "['weight', '-created_at']", 'object_name': 'Dish'},
-            'content': ('ckeditor.fields.RichTextField', [], {'null': 'True', 'blank': 'True'}),
+            'content': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
             'created_at': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'expiry_date': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
